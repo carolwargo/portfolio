@@ -77,7 +77,7 @@ const FullPosts = () => {
      
               {/*col start for all posts */}
               {blogPosts.map((post) => (
-                <div key={post.id} className="w3-container w3-white">
+                <div key={post.id} className="py-5 w3-white">
                   <img
                     src={post.imageUrl}
                     alt="blog-post"
@@ -86,7 +86,7 @@ const FullPosts = () => {
 
                 
 
-                  <div className="w3-container m-2">  
+                  <div className="py-5 m-2">  
               
                     <br></br>
                     <h3>
@@ -108,7 +108,7 @@ const FullPosts = () => {
                   {/* end entries containeritle & title description */}
 
                   {/* start entries containerontent container*/}
-                  <div className="w3-container ">
+                  <div className="py-5 ">
                     <p>{post.content}</p>
                     {/* start entries containerontent container ROW*/}
                     <div className="w3-row">

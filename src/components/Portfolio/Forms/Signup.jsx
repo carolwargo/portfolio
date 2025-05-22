@@ -62,7 +62,7 @@ function Signup() {
     return (
 
                 <div className="signup" id='signup'>
-                    <div className="w3-container bg-white shadow rounded">
+                    <div className="py-5 bg-white shadow rounded">
                  
                         <div className="w3-padding-16 border-dark">
                             <form onSubmit={handleSubmit} autoComplete="on" >

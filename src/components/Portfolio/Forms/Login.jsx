@@ -42,7 +42,7 @@ function Login() {
 
     return (
     
-                    <div className="w3-container bg-white shadow rounded">
+                    <div className="py-5 bg-white shadow rounded">
                             <div className="w3-padding-48">
                                 <form onSubmit={handleLogin}> {/* Wrap input fields with a form */}
                                     <div className="form-outline mb-4">

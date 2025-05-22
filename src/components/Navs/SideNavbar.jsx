@@ -36,7 +36,7 @@ function TopNav() {
       </nav>
 
       {/* Header */}
-      <header className="w3-container w3-theme w3-padding w3-light-gray" id="myHeader">
+      <header className="py-5 w3-theme w3-padding w3-light-gray" id="myHeader">
       <div className="w3-center" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
         <i className="fa fa-bars w3-xlarge w3-button w3-theme" onClick={toggleSidebar} style={{ verticalAlign: 'middle' }}></i>
      
@@ -50,7 +50,7 @@ function TopNav() {
       {/* Modal */}
       <div id="id01" className="w3-modal w3-margin-top w3-margin-bottom">
         <div className="w3-modal-content text-center w3-card-4 w3-pale-blue w3-animate-top shadow border">
-          <header className="w3-container w3-theme-l1 w3-padding-top-24"> 
+          <header className="py-5 w3-padding-top-24"> 
             <span onClick={() => document.getElementById('id01').style.display='none'} className="w3-button w3-display-topright"> <b>X</b></span>
             
             <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
@@ -64,7 +64,7 @@ function TopNav() {
               atque accusantium reiciendis adipisci at saepe earum.</p>
             <p><a className="w3-btn bg-black" href="/w3css/default.asp">LEARN EVEN MORE</a></p>
           </div>
-          <footer className="w3-container w3-theme-l1">
+          <footer className="py-5">
             <p>Don't forget to 'X' to return to home.</p>
             <br />
           </footer>

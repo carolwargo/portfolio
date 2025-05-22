@@ -30,7 +30,7 @@ const Posts = () => {
           style={{ width: "100%" }}
         />
 
-        <div className="w3-container">
+        <div className="py-5">
           <br></br>
           <h4>
             <b>
@@ -50,7 +50,7 @@ const Posts = () => {
         
         </div>
   {/* start entries card content container*/}
-  <div className="w3-container">
+  <div className="py-5">
                     <p>{post.content}</p>
                     {/* start entries card content container ROW*/}
                    <b><hr /></b> 

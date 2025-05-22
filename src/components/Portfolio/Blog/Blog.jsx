@@ -16,7 +16,7 @@ const Blog = () => {
             <div className="w3-col l4 w3-padding">
           
               {/*card start for bio*/}
-              <div className="w3-container">
+              <div className="py-5">
                
                 {/*card-image-start for bio*/}
                 <img
@@ -44,7 +44,7 @@ const Blog = () => {
               <hr />
                 {" "}
                 {/*card start for all popular posts elements*/}
-                <div className="w3-container">
+                <div className="py-5">
                   {/*container start header popular posts */}
                   <h4>Popular Posts</h4>
                 </div>
@@ -111,14 +111,14 @@ const Blog = () => {
          
               {/*card end for all popular posts elements*/}
               <hr />
-              <div className="w3-container">
+              <div className="py-5">
                 {" "}
              
                   {/*container start for tags Header*/}
                   <h4>Tags</h4>
                 </div>{" "}
                 {/*container end for tags Header*/}
-                <div className="w3-container w3-white">
+                <div className="py-5 w3-white">
                   {" "}
                   {/*container start for tags*/}
                   <p>
@@ -177,7 +177,7 @@ const Blog = () => {
           {/*row end for the whole page with exception of header & footer */}
         </div>
         <br />
-        <div className="w3-container d-flex w3-white w3-padding-24 w3-margin-top justify-content-around" >
+        <div className="py-5 d-flex w3-white w3-padding-24 w3-margin-top justify-content-around" >
   {/*container start for stats*/}
   <Alert variant="info" className="w3-margin-top  w3-padding-16">
     <p style={{ fontSize: "1.5rem" }}>

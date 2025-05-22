@@ -9,3 +9,12 @@ body, #root {
   justify-content: center;
   align-items: center;
 }
+
+.my-red {
+  color: #FF000C; 
+}
+
+.red-line {
+  border: 1px solid #121212;
+  margin: 40px 0;
+} 

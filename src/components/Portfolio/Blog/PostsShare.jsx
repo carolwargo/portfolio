@@ -32,14 +32,14 @@ const Posts = () => {
     {" "}
     {/*col start for all posts */}
     {blogPosts.map((post) => (
-      <div key={post.id} className="w3-container-4 mt-3 bg-black">
+      <div key={post.id} className="py-5 mt-3 bg-black">
         <img
           src={post.imageUrl}
           alt="blog-post"
           style={{ width: "100%" }}
         />
 
-        <div className="w3-container">
+        <div className="py-5">
           <br></br>
           <h4>
              Title: {""} <i><b>{post.title}</b> </i>
@@ -58,7 +58,7 @@ const Posts = () => {
         </div>
 
         {/* start entries container content container*/}
-        <div className="w3-container">
+        <div className="py-5">
           <p>{post.content}</p>
        
           {/* start entries container content container ROW*/}
@@ -68,7 +68,7 @@ const Posts = () => {
           <div className="row d-flex border-top">{/* Add bg-black class here */}
     <br></br>
     <div className="col-12">
-        <div className="w3-container pb-3 w3-margin-bottom">
+        <div className="py-5 pb-3 w3-margin-bottom">
           <br />
             <h6>
               <b> <u>SHARE THIS POST</u></b> 

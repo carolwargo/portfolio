@@ -73,27 +73,27 @@ const AboutFinal = () => {
 
 <p className="w3-wide text-black" style={{fontSize:'1rem'}}><GiGears className="justify-content-center"/> Core Technologies</p>
   <div className="w3-light-grey shadow ">
-    <div className="w3-container w3-padding-small bg-black w3-center shadow" style= {{width:"85%"}}>85%</div>
+    <div className="py-5 w3-padding-small bg-black w3-center shadow" style= {{width:"85%"}}>85%</div>
   </div>
   <br />
   <p className="w3-wide text-black" style={{fontSize:'1rem'}}><FaLaptopCode className="justify-content-center"/> Front-End Design</p>
   <div className="w3-light-grey shadow">
-    <div className="w3-container w3-padding-small bg-black w3-center" style= {{width:"95%"}}>95%</div>
+    <div className="py-5 w3-padding-small bg-black w3-center" style= {{width:"95%"}}>95%</div>
   </div>
   <br />
   <p className="w3-wide text-black" style={{fontSize:'1rem'}}><BsDatabaseLock  className="justify-content-center"/> Server-Side Development</p>
   <div className="w3-light-grey shadow">
-    <div className="w3-container w3-padding-small bg-black w3-center" style= {{width:"80%"}}>80%</div>
+    <div className="py-5 w3-padding-small bg-black w3-center" style= {{width:"80%"}}>80%</div>
   </div>
 <br />
 <p className="w3-wide text-black" style={{fontSize:'1rem'}}><HiOutlinePuzzlePiece className="justify-content-center"/> Full-Stack Integration</p>
   <div className="w3-light-grey shadow">
-    <div className="w3-container w3-padding-small bg-black w3-center" style= {{width:"75%"}}>75%</div>
+    <div className="py-5 w3-padding-small bg-black w3-center" style= {{width:"75%"}}>75%</div>
   </div>
 <br />
   <p className="w3-wide text-black" style={{fontSize:'1rem'}}><AiFillDatabase className="justify-content-center"/> Database Implementation</p>
   <div className="w3-light-grey shadow">
-    <div className="w3-container w3-padding-small bg-black w3-center" style= {{width:"75%"}}>75%</div>
+    <div className="py-5 w3-padding-small bg-black w3-center" style= {{width:"75%"}}>75%</div>
   </div>
  
     </div>    
