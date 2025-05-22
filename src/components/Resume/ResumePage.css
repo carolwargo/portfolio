@@ -1,0 +1,129 @@
+/*explore topics*/
+.explore-topics {
+    border-bottom: 1px solid #dee2e6; /* Bootstrap border-bottom color */
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+  }
+  .explore-topics-entry {
+    font-size: 0.875rem; /* Equivalent to Bootstrap .small */
+    font-family: 'Roboto', sans-serif;
+  }
+  .explore-topics-title {
+    font-weight: 800;
+    text-transform: uppercase;
+    color: rgb(77, 70, 70);
+    text-decoration: underline;
+  }
+  .explore-topics-title:hover {
+    color: rgb(247, 128, 128);
+    text-decoration: underline;
+  }
+  .explore-topics-meta {
+    font-weight: 500;
+    color: #6c757d; /* Bootstrap .text-muted */
+    opacity: 0.75;
+  }
+  
+
+/*explore classes*/
+  .explore-classes {
+    border-bottom: 1px solid #dee2e6; /* Bootstrap border-bottom color */
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+  }
+  .explore-classes-entry {
+    font-size: 0.875rem; /* Equivalent to Bootstrap .small */
+    font-family: 'Roboto', sans-serif;
+  }
+  .explore-classes-title {
+    font-weight: 800;
+    text-transform: uppercase;
+    color: rgb(176, 138, 138);
+    text-decoration: underline;
+  }
+  .explore-classes-meta {
+    font-weight: 500;
+    color: #6c757d; /* Bootstrap .text-muted */
+    opacity: 0.75;
+  }
+
+
+/*explore jobs*/
+.explore-jobs {
+    border-bottom: 1px solid #dee2e6; /* Bootstrap border-bottom color */
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+  }
+  .explore-jobs-entry {
+    font-size: 0.875rem; /* Equivalent to Bootstrap .small */
+    font-family: 'Roboto', sans-serif;
+  }
+  .explore-jobs-title {
+    font-weight: 800;
+    text-transform: uppercase;
+    color: rgb(77, 70, 70);
+    text-decoration: underline;
+  }
+  .explore-jobs-title:hover {
+    color: rgb(247, 128, 128);
+    text-decoration: underline;
+  }
+  .explore-jobs-meta {
+    font-weight: 500;
+    color: #6c757d; /* Bootstrap .text-muted */
+    opacity: 0.75;
+  }
+
+
+  /*explore business*/
+.explore-business {
+    border-bottom: 1px solid #dee2e6; /* Bootstrap border-bottom color */
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+  }
+  .explore-business-entry {
+    font-size: 0.875rem; /* Equivalent to Bootstrap .small */
+    font-family: 'Roboto', sans-serif;
+  }
+  .explore-business-title {
+    font-weight: 800;
+    text-transform: uppercase;
+    color: rgb(77, 70, 70);
+    text-decoration: underline;
+  }
+  .explore-business-title:hover {
+    color: rgb(247, 128, 128);
+    text-decoration: underline;
+  }
+  .explore-business-meta {
+    font-weight: 500;
+    color: #6c757d; /* Bootstrap .text-muted */
+    opacity: 0.75;
+  }
+
+
+  
+/* Remove borders and shadows */
+.accordion,
+.accordion-item,
+.accordion-button,
+.accordion-body {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Style the header button */
+.accordion-button {
+  color: #6c757d !important;         /* Bootstrap .text-muted */
+  background-color: transparent !important;
+  font-weight: 500;
+}
+
+/* When accordion is expanded */
+.accordion-button:not(.collapsed) {
+  background-color: transparent !important;
+  color: #495057 !important;         /* Darker muted */
+  box-shadow: none !important;
+}
+

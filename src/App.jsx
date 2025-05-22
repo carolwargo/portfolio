@@ -1,25 +1,29 @@
 // ./src/App.js
-import { Suspense, lazy } from "react";
+import { lazy } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 
-import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
+//import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 // Lazy-loaded pages
-const LearningPage = lazy(() => import("./pages/LearningPage/LearningPage"));
-const BusinessPage = lazy(() => import("./pages/BusinessPage/BusinessPage")); 
-const AnalysisReport = lazy(() => import("./pages/AnalysisReport/AnalysisReport")); 
+const HomePage = lazy(() => import("./pages/HomePage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const ResumePage = lazy(() => import("./pages/ResumePage"));
+const PortfolioPage = lazy(() => import("./pages/Portfolio/PortfolioPage"));
 
 function App() {
   return (
     <div className="App">
 <HashRouter>
   <Routes>
-    <Route path="/" element={<LearningPage />} />
-    <Route path="/business" element={<BusinessPage />} />
-    <Route path="/analysis-report" element={<AnalysisReport />} />
+    <Route path="/" element={<HomePage />} />
+    <Route path="/about" element={<AboutPage />} />
+    <Route path="/contact" element={<ContactPage />} />
+    <Route path="/resume" element={<ResumePage />} />
+    <Route path="/portfolio" element={<PortfolioPage />} />
   </Routes>
 </HashRouter>
 
