@@ -3,12 +3,12 @@ import Alert from "react-bootstrap/Alert";
 import Accordion from "react-bootstrap/Accordion";
 import { Link } from "react-router-dom";
 import { Button, Badge, CloseButton } from "react-bootstrap";
-import WebComponentsTrans from "../assets/images/WebComponentsTrans.png";
-import ImageList from "../components/Portfolio/ImageList/ImageList.jsx";
-import ImageTitles from "../components/Portfolio/ImageList/ImageTitles.jsx";
-import NutritionTable from "../components/Portfolio/Tables/NutritionTable.jsx";
-import DataTable from "../components/Portfolio/Tables/DataTable.jsx";
-import PaginationTable from "../components/Portfolio/Tables/PaginationTable.jsx";
+import WebComponentsTrans from "../../assets/images/WebComponentsTrans.png";
+import ImageList from "../../components/Portfolio/ImageList/ImageList.jsx";
+import ImageTitles from "../../components/Portfolio/ImageList/ImageTitles.jsx";
+import NutritionTable from "../../components/Portfolio/Tables/NutritionTable.jsx";
+import DataTable from "../../components/Portfolio/Tables/DataTable.jsx";
+import PaginationTable from "../../components/Portfolio/Tables/PaginationTable.jsx";
 
 function Portfolio() {
   const scrollToTop = () => {

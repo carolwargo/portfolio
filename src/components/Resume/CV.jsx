@@ -6,7 +6,7 @@ import { AiFillDatabase } from "react-icons/ai";
 import { BsDatabaseLock } from "react-icons/bs";
 import { GiGears } from "react-icons/gi";
 import { SiAdobecreativecloud } from "react-icons/si";
-import { SiMicrosoftoffice } from "react-icons/si";
+import { FaMicrosoft } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 
 const CV = () => {
@@ -326,7 +326,7 @@ const CV = () => {
                 {/**start software */}
 
                 <h6 className="w3-text-black">
-                  <SiMicrosoftoffice className="fa-fw " /> Microsoft Suite
+                  < FaMicrosoft className="fa-fw " /> Microsoft Suite
                 </h6>
               </div>
               <div className="w3-col l4">

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import MeWhite from "../assets/images/MeWhite.png";
 import { FaGoogle } from "react-icons/fa";
-import { SiMicrosoftoffice } from "react-icons/si";
+import { FaMicrosoft } from "react-icons/fa";
 import { SiAdobecreativecloud } from "react-icons/si";
 import ResumeDownload from "../assets/ResumeDownload.pdf";
 import CV from "../components/Resume/CV.jsx";
@@ -17,12 +17,9 @@ export default function ResumePage() {
 
   return (
     <>
-      <div className="container">
-        {" "}
-        <ResumeProfile />
-      </div>
-      <div className="resume" id="resume">
-        <CV />
+ 
+
+
         {/** Start Main container */}
         <div className="w3-margin-top w3-padding-top-32">
           <div className="w3-container w3-padding">
@@ -43,12 +40,13 @@ export default function ResumePage() {
                 <div className="w3-third flex-column justify-content-center align-items-center">
                   <div className="w3-text-grey">
                     <div className="w3-display-container">
-                      <img
-                        src={MeWhite}
-                        style={{ width: "100%", border: "4px solid #FF385C" }}
-                        alt="me"
+                      <img 
+                      src={MeWhite} 
+                      alt="Carol Wargo, Full Stack Developer" 
                         className="w3-hover-opacity-off"
-                      />
+                          style={{ width: "100%", border: "4px solid #FF385C" }}
+                      title="Carol Wargo" />
+
                       <div className="w3-display-bottomleft w3-container w3-text-white">
                         <h4
                           className="w3-margin-bottom"
@@ -79,7 +77,7 @@ export default function ResumePage() {
                           <div className="row ">
                             <div className="col-md-6">
                               <a
-                                href="mail:carolwargo.dev@gmail.com"
+                                href="mailto:carolwargo.dev@gmail.com"
                                 className="w3-text-black"
                               >
                                 <i className="fa fa-envelope  w3-margin-right w3-text-black"></i>
@@ -335,7 +333,7 @@ export default function ResumePage() {
                         Google Workspace
                       </h6>
                       <h6 className="w3-text-black w3-margin-left">
-                        <SiMicrosoftoffice className="fa-fw w3-margin-left w3-text-black" />{" "}
+                        <FaMicrosoft className="fa-fw w3-margin-left w3-text-black" />{" "}
                         Microsoft Suite
                       </h6>
                       <h6 className="w3-text-black w3-margin-left">
@@ -706,59 +704,6 @@ export default function ResumePage() {
               </div>
               {/*}End Main row*/}
 
-              {/*Start Practices
- <div className="bg-black w3-margin-top">
-
- <div className="w3-container w3-content bg-black w3-padding-32 w3-padding-large">
-   <div className="container text-center">
-      <h2>
-       PRACTICES FOLLOWED
-          </h2>
-          </div>
-      
-        <div className="w3-row d-flex justify-content-center w3-padding-top-24 w3-margin-top" >
-    <div className="w3-col m6 flex-column  w3-padding-16">
-    <h5 className="w3-margin-left"><b>DEVELOPMENT PRACTICES.</b></h5>
-        <ul>
-              <li>
-              Effectively communicates with stakeholders throughout the development process.
-              </li>
-              <li>
-              Embraces continuous improvement through post-implementation evaluations and knowledge sharing.
-              </li>
-              <li>Applies critical thinking to analyze problems and propose innovative solutions.
-</li>
-<li>Delivers functional software focusing on meeting user needs and exceeding expectations.</li>
-             
-            </ul> 
-            <br />
-            </div>
-            <div className="w3-col m6 flex-column w3-padding-16">
-            <h5 className="w3-margin-left"><b>INTERPERSONAL PRACTICES.</b></h5>
-        
-        <ul>
-                <li>
-                Articulates ideas, recommendations, and findings clearly and inclusively.
-                </li>
-                <li>
-                Promotes and welcomes feedback from all stakeholders.
-                </li>
-                <li>
-                Adapts positively to change and proactively embraces new challenges.
-                </li>
-                <li>
-                Inspires and motivates team members to achieve common goals.
-                </li>
-                <li>
-                Negotiates and mediaties to resolve conflicts and reach consensus.
-                </li>
-               
-              </ul>
-              </div>
-      </div>
-</div>
-</div>
-End Practices*/}
 
               {/*Start Volunteer*/}
               <div className="w3-light-gray w3-margin-top">
@@ -873,7 +818,7 @@ End Practices*/}
             style={{ backgroundColor: "#FF385C" }}
           >
             <Link
-              to='/portfolio'
+              to="/portfolio"
               className="button text-white"
               onClick={scrollToTop}
             >
@@ -890,7 +835,63 @@ End Practices*/}
             </div>
           </footer>
         </div>
-      </div>
+
     </>
   );
 }
+
+
+
+              /*Start Practices
+ <div className="bg-black w3-margin-top">
+
+ <div className="w3-container w3-content bg-black w3-padding-32 w3-padding-large">
+   <div className="container text-center">
+      <h2>
+       PRACTICES FOLLOWED
+          </h2>
+          </div>
+      
+        <div className="w3-row d-flex justify-content-center w3-padding-top-24 w3-margin-top" >
+    <div className="w3-col m6 flex-column  w3-padding-16">
+    <h5 className="w3-margin-left"><b>DEVELOPMENT PRACTICES.</b></h5>
+        <ul>
+              <li>
+              Effectively communicates with stakeholders throughout the development process.
+              </li>
+              <li>
+              Embraces continuous improvement through post-implementation evaluations and knowledge sharing.
+              </li>
+              <li>Applies critical thinking to analyze problems and propose innovative solutions.
+</li>
+<li>Delivers functional software focusing on meeting user needs and exceeding expectations.</li>
+             
+            </ul> 
+            <br />
+            </div>
+            <div className="w3-col m6 flex-column w3-padding-16">
+            <h5 className="w3-margin-left"><b>INTERPERSONAL PRACTICES.</b></h5>
+        
+        <ul>
+                <li>
+                Articulates ideas, recommendations, and findings clearly and inclusively.
+                </li>
+                <li>
+                Promotes and welcomes feedback from all stakeholders.
+                </li>
+                <li>
+                Adapts positively to change and proactively embraces new challenges.
+                </li>
+                <li>
+                Inspires and motivates team members to achieve common goals.
+                </li>
+                <li>
+                Negotiates and mediaties to resolve conflicts and reach consensus.
+                </li>
+               
+              </ul>
+              </div>
+      </div>
+</div>
+</div>
+End Practices*/
