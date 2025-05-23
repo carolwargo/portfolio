@@ -1,5 +1,3 @@
-
-import { useInView } from "react-intersection-observer";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -30,10 +28,6 @@ function Album() {
     });
   };
 
-  const { ref, inView } = useInView({
-    triggerOnce: false, // Animation triggers only once
-    threshold: 0.1, // Percentage of the div that needs to be visible to trigger the animation
-  });
   
   return (
 

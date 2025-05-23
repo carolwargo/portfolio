@@ -16,7 +16,7 @@ const ResumePage = lazy(() => import("./pages/ResumePage"));
 const PortfolioPage = lazy(() => import("./pages/Portfolio/PortfolioPage"));
 const GraphicsPage = lazy(() => import("./pages/GraphicsPage"));
 const SamplesPage = lazy(() => import("./pages/SamplesPage"));
-
+const ServerPage = lazy(() => import("./pages/ServerPage"));
 function App() {
   return (
     <div className="App">
@@ -36,6 +36,7 @@ function App() {
               <Route path="/portfolio" element={<PortfolioPage />} />
               <Route path="/graphics" element={<GraphicsPage />} />
               <Route path="/samples" element={<SamplesPage />} />
+              <Route path="/server" element={<ServerPage />} />
          
             {/* Catch-all for 404s */}
             <Route path="*" element={<NotFound />} />

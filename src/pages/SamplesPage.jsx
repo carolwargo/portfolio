@@ -1,6 +1,3 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import BlogShot from "../assets/images/FullPage/BlogShot.png";
 import RealEstate from "../assets/images/FullPage/RealEstate.png";
 import YogaBlog from "../assets/images/FullPage/YogaBlog.png";
@@ -18,18 +15,9 @@ function PageSamples() {
       behavior: "smooth"
     });
   };
-  const { ref, inView } = useInView({
-    triggerOnce: false, // Animation triggers only once
-    threshold: 0.1, // Percentage of the div that needs to be visible to trigger the animation
-  });
+
   return (
-    <motion.div
-    ref={ref}
-    initial={{ y: -20, opacity: 0.5 }}
-    animate={inView ? { y: 0, opacity: 1} : {}}
-    exit={{ y: 20, opacity: 0.5 }}
-    transition={{ duration: 0.8 }}
-  >
+
     <div className="page-samples" id="page-samples">
       <div className="w3-padding-top-48 w3-padding-large ">
           <div className="w3-content w3-container w3-padding-16 w3-margin-top justify-content-center"
@@ -353,8 +341,6 @@ function PageSamples() {
             </footer>
         </div>
       </div>
-{/**End Album */}
-    </motion.div>
   );
 }
 

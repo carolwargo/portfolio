@@ -35,7 +35,21 @@ export default function TitlebarBelowMasonryImageList() {
   };
 
   return (
-    <Box sx={{ width: '100%', height: 250, overflowY: 'scroll' }} className='shadow border align-items-center justify-content-center'>
+    <div className="p-3 w3-padding-32">
+               <div className="w3-padding-small text-center ">
+                  <h4 className=" w3-margin-bottom mt-4">MASONRY GRID</h4>
+                  <hr />
+                  <p>
+                    Layout provides versatility for image sizes. Perfect for
+                    showcasing portfolios, photo galleries, and other visual
+                    content that doesn't conform to 'one-size fits all'. Images
+                    display a simple heading and can be clickable to increase in
+                    size or navigate to a defined section of choice.
+                  </p>
+                </div>
+    <Box sx={{  height: 600, overflowY: 'scroll' }} className='shadow border align-items-center justify-content-center'>
+ 
+      
       <ImageList
         variant="masonry"
         cols={getCols()}
@@ -54,6 +68,7 @@ export default function TitlebarBelowMasonryImageList() {
       ))}
     </ImageList>
   </Box>
+  </div>
   );
 }
 
