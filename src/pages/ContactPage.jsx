@@ -136,6 +136,7 @@ export default function ContactPage() {
                   py: { xs: 2, sm: 3, md: 3 },
                   position: "relative",
                   overflow: "hidden",
+                  borderRadius: "10px",
                 }}
               >
                 <Box
@@ -212,7 +213,7 @@ export default function ContactPage() {
                     variant="h6"
                     sx={{
                       fontWeight: "bold",
-                      color: "#FF385C",
+                      color: "#64033b",
                       mb: 2,
                       textAlign: "center",
                       position: "relative",
@@ -224,7 +225,7 @@ export default function ContactPage() {
                         transform: "translateX(-50%)",
                         width: "50px",
                         height: "2px",
-                        bgcolor: "#FF385C",
+                        bgcolor: "#64033b",
                       },
                     }}
                   >
