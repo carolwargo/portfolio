@@ -44,7 +44,7 @@ export default function TitlebarBelowMasonryImageList() {
         bgcolor: "transparent", // Let background show through
         fontFamily: "Raleway, sans-serif",
         background: isMobile
-          ? "linear-gradient(180deg,rgb(131, 0, 131) 0%, #f5e8c7 100%)" // Simplified for mobile
+          ? "linear-gradient(180deg, #830083 0%, #f5e8c7 100%)" // Simplified for mobile
           : `url('/assets/hibiscus-pattern.png') center center / 200px repeat, linear-gradient(180deg, #1e3a8a 0%, #f5e8c7 100%)`, // Pattern + gradient
         backgroundAttachment: isMobile ? "scroll" : "fixed", // Disable parallax on mobile
         backgroundSize: isMobile ? "cover" : "200px, cover", // Pattern size, gradient cover

@@ -18,35 +18,6 @@ const Server = () => {
   return (
     <div className="server" id="server">
 
-        <style>
-          {`
-
-
-.text-custom-pink {
-  color: #FF385C !important;
-}
-.bg-custom-pink {
-  background-color: #FF385C !important;
-}
-.btn-custom-pink {
-  background-color: #FF385C;
-  border-color: #FF385C;
-  color: #fff;
-}
-.btn-custom-pink:hover {
-  background-color: #e63252; /* Darker pink for hover */
-  border-color: #e63252;
-  color: #fff;
-}
-.portfolio .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.portfolio .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
-}
-  `}
-        </style>
 
         {/**Start INTRO Web Components */}
         <div className="container w3-padding-top-64 mb-4">
