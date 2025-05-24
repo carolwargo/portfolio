@@ -1,3 +1,4 @@
+import React from "react";
 import Slider from "react-slick";
 import Typo1 from '../../../assets/images/Typo/Typo1.png';  
 import Typo2 from '../../../assets/images/Typo/Typo2.png';  

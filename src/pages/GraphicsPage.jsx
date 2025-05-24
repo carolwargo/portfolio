@@ -23,13 +23,7 @@ const Graphics = () => {
 
   return (
    <div className="graphics w3-light-gray" id="graphics">
-      <motion.div
-        ref={ref}
-        initial={{ y: -20, opacity: 0.5 }}
-        animate={inView ? { y: 0, opacity: 1} : {}}
-        exit={{ y: 20, opacity: 0.5 }}
-        transition={{ duration: 0.8 }}
-      >
+    
           <div className="w3-container w3-content w3-margin-bottom w3-padding-large w3-padding-48">
         <div className="row d-flex justify-content-center align-items-center" >
               <div className="col-sm-12 col-md-5 col-lg-5 justify-content-center w3-padding-small">
@@ -66,8 +60,7 @@ const Graphics = () => {
 <div className="w3-container w3-container" id="graphics-info-samples">
   <InfographicsComponents/>
   </div>
-  </motion.div>
-
+ 
 
 
       <div className="w3-container w3-container w3-padding-large w3-padding-64 text-center ">
