@@ -818,7 +818,7 @@ export default function ResumePage() {
             style={{ backgroundColor: "#FF385C" }}
           >
             <Link
-              to="/portfolio"
+              to="/server"
               className="button text-white"
               onClick={scrollToTop}
             >

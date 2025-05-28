@@ -7,6 +7,10 @@ body, #root {
   justify-content: center;
   align-items: center;
 }
+/* src/App.css */
+html {
+  scroll-behavior: smooth;
+}
 
 .my-red {
   color: #FF000C; 
