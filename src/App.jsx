@@ -27,6 +27,7 @@ const DefaultLayout = ({ children }) => (
   </Box>
 );
 
+{/**
 const GraphicsLayout = ({ children }) => (
   <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
     <Box sx={{ flexGrow: 1 }}>
@@ -34,7 +35,8 @@ const GraphicsLayout = ({ children }) => (
     </Box>
   </Box>
 );
-
+ */}
+ 
 function App() {
   return (
     <div className="App">

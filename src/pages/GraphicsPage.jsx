@@ -1,229 +1,154 @@
-import  { useState, useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
-import EmailComponent from '../components/Graphics/NewsletterComponent';
-import SocialMediaComponent from '../components/Graphics/SocialMediaComponent';
-import SportsComponent from '../components/Graphics/SportsComponent';
-import InfographicComponent from '../components/Graphics/InfographicComponent';
-import { graphicsData } from '../data/graphicsData';
-import { IconButton } from '@mui/material';
-import { Menu as MenuIcon, X as CloseIcon } from 'lucide-react';
-//import NewsletterComponent from '../components/Graphics/NewsletterComponent';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
+import { useMediaQuery, useTheme } from "@mui/material";
 
+// Image imports (adjusted paths)
+import CarBW from "../assets/images/Hawaii/CarBW.png";
+import Sunset from "../assets/images/Hawaii/Sunset.png";
+import Surf from "../assets/images/Hawaii/Surf.png";
+import Concert from "../assets/images/Hybiscus550/Concert.png";
+import Bed from "../assets/images/Hybiscus550/Bed.png";
+import Street from "../assets/images/Hybiscus550/Street.png";
+import SurfGuy from "../assets/images/Hybiscus450/SurfGuy.png";
+import GirlBoat from "../assets/images/Hybiscus450/GirlBoat.png";
+import Swing from "../assets/images/Hybiscus450/Swing.png";
 
-const GraphicsPage = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
-  const location = useLocation();
+export default function TitlebarBelowMasonryImageList() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // < 600px
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md")); // 600px–900px
+  const isDesktop = useMediaQuery(theme.breakpoints.up("md")); // ≥ 900px
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      window.history.pushState(null, '', `#${sectionId}`);
-    }
-    setSidebarOpen(false);
+  const getCols = () => {
+    if (isMobile) return 1; // 1 column on mobile
+    if (isTablet) return 2; // 2 columns on tablet
+    return 3; // 3 columns on desktop
   };
 
-  // Initialize Bootstrap scroll-spy
-  useEffect(() => {
-    const mainContent = document.querySelector('[data-bs-spy="scroll"]');
-    if (mainContent) {
-      // Ensure Bootstrap is loaded
-      if (window.bootstrap) {
-        new window.bootstrap.ScrollSpy(mainContent, {
-          target: '#navbar-example3',
-          offset: 60, // Match navbar height
-        });
-      }
-    }
-
-    // Handle initial hash navigation
-    const hash = location.hash.replace('#', '');
-    if (hash) {
-      setTimeout(() => scrollToSection(hash), 100);
-    }
-
-    // Cleanup scroll-spy on unmount
-    return () => {
-      if (window.bootstrap && mainContent) {
-        const scrollSpy = window.bootstrap.ScrollSpy.getInstance(mainContent);
-        if (scrollSpy) scrollSpy.dispose();
-      }
-    };
-  }, [location]);
-
-  // Toggle sidebar on mobile
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const getGap = () => {
+    if (isMobile) return 4; // Smaller gap on mobile
+    if (isTablet) return 6;
+    return 8; // Larger gap on desktop
+  };
 
   return (
-    <div >
-
-<nav id="navbar-example3" className="navbar navbar-light bg-light flex-column align-items-stretch p-3">
-  <a className="navbar-brand" href="#">Navbar</a>
-  <nav className="nav nav-pills flex-column">
-    <a className="nav-link" href="#item-1">Item 1</a>
-    <nav className="nav nav-pills flex-column">
-      <a className="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
-      <a className="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
-    </nav>
-    <a className="nav-link" href="#item-2">Item 2</a>
-    <a className="nav-link" href="#item-3">Item 3</a>
-    <nav className="nav nav-pills flex-column">
-      <a className="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
-      <a className="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
-    </nav>
-  </nav>
-</nav>
-
-<div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
-  <h4 id="item-1">Welcome</h4>
-
-  <h5 id="item-1-1">Item 1-1</h5>
-
-  <h5 id="item-1-2">Item 1-2</h5>
-  <p>...</p>
-  <h4 id="item-2">Item 2</h4>
-  <p>...</p>
-  <h4 id="item-3">Item 3</h4>
-  <p>...</p>
-  <h5 id="item-3-1">Item 3-1</h5>
-  <p>...</p>
-  <h5 id="item-3-2">Item 3-2</h5>
-  <p>...</p>
-</div>
-
-
-
-
-
-
-
-
-
-      <div className="row">
-        {/* Sidebar */}
-        <nav
-          id="navbar-example3"
-          className={`navbar navbar-light flex-column align-items-stretch p-3 bg-light ${sidebarOpen ? 'd-block' : 'd-none d-md-block'}`}
-          style={{
-            width: sidebarOpen ? '300px' : '0',
-            position: sidebarOpen ? 'fixed' : 'sticky',
-            top: '60px',
-            height: 'calc(100vh - 60px)',
-            zIndex: 1200,
-            transition: 'width 0.3s, transform 0.3s',
-            transform: sidebarOpen ? 'translateX(0)' : 'translateX(-300px)',
-            backgroundColor: '#FF3855',
-            color: 'white',
-            fontFamily: '"Raleway", sans-serif',
-            overflowY: 'auto',
+    <Box
+      sx={{
+        mt: { xs: 5, sm: 5, md: 5 }, // Responsive margin 
+        py: { xs: 3, sm: 4, md: 5 }, // Responsive padding
+        px: { xs: 2, sm: 3, md: 4 },
+        bgcolor: "transparent", // Let background show through
+        fontFamily: "Raleway, sans-serif",
+        background: isMobile
+          ? "linear-gradient(180deg, #830083 0%, #f5e8c7 100%)" // Simplified for mobile
+          : `url('/assets/hibiscus-pattern.png') center center / 200px repeat, linear-gradient(180deg, #1e3a8a 0%, #f5e8c7 100%)`, // Pattern + gradient
+        backgroundAttachment: isMobile ? "scroll" : "fixed", // Disable parallax on mobile
+        backgroundSize: isMobile ? "cover" : "200px, cover", // Pattern size, gradient cover
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          bgcolor: "rgba(255, 255, 255, 0.1)", // Subtle overlay for readability
+          zIndex: 0,
+        },
+      }}
+    >
+      <Box
+        sx={{
+          position: "relative",
+          zIndex: 1, // Ensure content is above overlay
+          textAlign: "center",
+          mb: { xs: 2, sm: 3, md: 4 },
+        }}
+      >
+      <Box sx={{ textAlign: "center", mb: { xs: 2, sm: 3, md: 4 } }}>
+        <Typography
+          variant={isMobile ? "h5" : "h4"}
+          sx={{ fontWeight: "bold", color: "#f96dd6", mb: 1 }}
+        >
+          Masonry Grid
+        </Typography>
+        <Divider
+          sx={{
+            width: "100px",
+            mx: "auto",
+            mb: 2,
+            bgcolor: "#f96dd6",
+            height: "2px",
+          }}
+        />
+        <Typography
+          variant={isMobile ? "body2" : "body1"}
+          sx={{ color: "white", maxWidth: "600px", mx: "auto" }}
+        >
+          Versatile layout for varying image sizes, ideal for portfolios, photo galleries, and visual content that breaks the uniform grid mold.
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          maxWidth: "1200px",
+          mx: "auto",
+          minHeight: "100%", // Grow with content
+        }}
+      >
+        <ImageList
+          variant="masonry"
+          cols={getCols()}
+          gap={getGap()}
+          sx={{
+            p: { xs: 1, sm: 2 },
+            "& img": {
+              maxHeight: { xs: "250px", sm: "300px", md: "350px" }, // Limit image height
+              objectFit: "cover",
+              width: "100%",
+              transition: "transform 0.3s ease",
+              "&:hover": {
+                transform: "scale(1.05)",
+                cursor: "pointer",
+              },
+            },
           }}
         >
-          <div className="d-flex justify-content-between align-items-center mb-3">
-            <span className="navbar-brand" style={{ color: 'white', fontWeight: 'bold', fontSize: '1.25rem' }}>
-              Graphics Dashboard
-            </span>
-            <IconButton
-              className="d-md-none"
-              onClick={toggleSidebar}
-              style={{ color: 'white' }}
-              aria-label="Close sidebar"
-            >
-              <CloseIcon size={24} />
-            </IconButton>
-          </div>
-          <nav className="nav nav-pills flex-column">
-            {graphicsData.map((section) => (
-              <a
-                key={section.id}
-                className="nav-link"
-                href={`#${section.id}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(section.id);
-                }}
-                style={{
-                  color: 'white',
-                  padding: '10px 15px',
-                  borderRadius: '4px',
-                  margin: '2px 0',
-                }}
-              >
-                {section.title}
-              </a>
-            ))}
-          </nav>
-        </nav>
-
-        {/* Main Content */}
-        <div
-          className="col-12 col-md-9 ms-auto"
-          data-bs-spy="scroll"
-          data-bs-target="#navbar-example3"
-          data-bs-offset="60"
-          tabIndex="0"
-          style={{ maxWidth: '1325px', margin: '0 auto', padding: '20px', position: 'relative', zIndex: 10 }}
-        >
-          <div className="d-flex justify-content-between align-items-center mb-4">
-            <h4 className="fw-bold" style={{ color: '#FF3855', fontSize: 'clamp(1.5rem, 5vw, 2rem)' }}>
-              Graphics Portfolio
-            </h4>
-            <IconButton
-              className="d-md-none"
-              onClick={toggleSidebar}
-              style={{ color: '#FF3855' }}
-              aria-label="Toggle sidebar"
-            >
-              <MenuIcon size={24} />
-            </IconButton>
-          </div>
-
-          {/* Sections */}
-          <div id="email-samples">
-            <EmailComponent />
-          </div>
-          <div id="social-media">
-            <SocialMediaComponent />
-          </div>
-          <div id="sports">
-            <SportsComponent />
-          </div>
-          <div id="infographic">
-            <InfographicComponent />
-          </div>
-
-          {/* Feedback Section */}
-          <div className="text-center py-5">
-            <h5 className="mb-3" style={{ color: '#333', fontSize: 'clamp(1.25rem, 4vw, 1.5rem)' }}>
-              Much more to come... Stay tuned! Feedback is welcome and encouraged. Feel free to contact me to share your thoughts.
-            </h5>
-            <motion.button
-              className="btn"
-              style={{
-                backgroundColor: '#FF3855',
-                color: '#fff',
-                padding: '10px 20px',
-                borderRadius: '1.5rem',
-                border: 'none',
-                fontFamily: '"Raleway", sans-serif',
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>
-                CONTACT ME
-              </Link>
-            </motion.button>
-          </div>
-        </div>
-      </div>
-    </div>
+          {itemData.map((item) => (
+            <ImageListItem key={item.img}>
+              <img
+                src={item.img}
+                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                alt={`Photograph titled ${item.title} by ${item.author}`}
+                loading="lazy"
+                style={{ width: "100%", height: "auto" }}
+                onClick={() => console.log(`Clicked: ${item.title}`)} // Placeholder for modal
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </Box>
+      </Box>
+    </Box>
   );
-};
+}
 
-export default GraphicsPage;
+const itemData = [
+  { img: CarBW, title: "Vintage Car", author: "Joanna Doe" },
+  { img: Swing, title: "Oceanfront Swing", author: "Jane Doe" },
+  { img: Street, title: "Urban Street", author: "John Doe" },
+  { img: Concert, title: "Live Concert", author: "John Doe" },
+  { img: SurfGuy, title: "Surfer", author: "John Doe" },
+  { img: Sunset, title: "Beach Sunset", author: "Jocelynn Doe" },
+  { img: Surf, title: "Surfing Wave", author: "Joaquin Doe" },
+  { img: GirlBoat, title: "Girl on Boat", author: "John Doe" },
+  { img: Bed, title: "Cozy Bed", author: "John Doe" },
+];
+
+
 
 /**     <div className="col-sm-12 col-md-7 col-lg-7 w3-padding-small">
         <img src={Newsletter3} alt="newsletter3" className='w-100 shadow' />

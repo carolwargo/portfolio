@@ -2,7 +2,7 @@ import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import WeatherNew from "../assets/images/Server/WeatherNew.png";
 import WeatherMobile from "../assets/images/Server/WeatherMobile.png";
-import { MDBRow, MDBCol, MDBContainer, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn } from "mdb-react-ui-kit";  
+import { MDBRow, MDBCol, MDBContainer, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn} from "mdb-react-ui-kit";  
 import portfolioItems from "../data/portfolioItems"; // Import your portfolio items data
 const Server = () => {
   const scrollToTop = () => {
@@ -200,35 +200,47 @@ const Server = () => {
         <div className="row d-flex justify-content-center align-items-center">
           <div className="flex-column col-sm-12 col-md-12 col-lg-12 justify-content-center align-items-center">
             <div className="container w3-white text-center w3-padding-large w3-padding-small">
-              <h2 className="w3-text-black w3-margin-top">
-                <b className="fw-bold text-black">Graphic Elements</b>
-              </h2>
-              <hr className="w3-opacity" />
+          
+
+
+              {/** 
               <h4 className="text-black">
                 Graphic elements allow designers to create compelling and
                 impactful experiences that resonate with audiences and achieve
                 their design objectives.
               </h4>
+              */}
               <p>
+                More to come <br />
                 {" "}
                 <i>
-                  <b> NOTE:</b> "Graphic elements page is under construction.
-                  View with the understanding it's a work in progress. Thanks
+                  <b> NOTE:</b>  "Site is undergoing an upgrade. Check back to see progress, or contact me questions. Thanks
                   for your patience."
                 </i>
               </p>
-              <button
-                className="w3-button w3-text-light-grey  w3-margin-right rounded mt-2 w3-margin-bottom"
-                style={{ backgroundColor: "#FF385C" }}
-              >
-                <Link
-                  to="/graphics"
-                  className="button text-white"
-                  onClick={scrollToTop}
-                >
-                  VIEW GRAPHICS PAGE
-                </Link>
-              </button>
+            
+                 <Link
+            to="/contact"
+            onClick={scrollToTop}
+            className="btn btn-outline-primary rounded-pill px-4 py-2 shadow"
+            style={{
+              borderColor: "#FF000C",
+              color: "#FF000C",
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#FF000C";
+              e.currentTarget.style.color = "#fff";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.color = "#FF000C";
+            }}
+            aria-label="View Carol Wargo's contact"
+          >
+         
+           Contact Me
+          </Link>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ import RealEstate from "../assets/images/FullPage/RealEstate.png";
 import YogaBlog from "../assets/images/FullPage/YogaBlog.png";
 import { Link } from "react-router-dom";
 import Album from "../assets/images/FullPage/Album.png";
+import { MDBIcon } from "mdb-react-ui-kit";
 //import Restaurant from "../assets/images/FullPage/Restaurant.png";
 import REDashboard from "../assets/images/FullPage/REDashboard.png";
 import Store from "../assets/images/FullPage/Store.png";
@@ -19,8 +20,8 @@ function PageSamples() {
   return (
 
     <div className="page-samples" id="page-samples">
-      <div className="w3-padding-top-48 w3-padding-large ">
-          <div className="w3-content w3-container w3-padding-16 w3-margin-top justify-content-center"
+      <div className="p-3 mt-5">
+          <div className="container mt-5 justify-content-center"
             style={{
               position: "relative",
               zIndex: 1,
@@ -40,7 +41,7 @@ function PageSamples() {
 <br />
 
 {/**Start Real Estate */}
-      <div className="w3-container w3-content text-black">
+      <div className="container p-4 text-black">
         <div className="realestate-page w3-padding-24" id="realestate-page">
           <div className=" text-black justify-content-center">
             <div className="justify-content-center">
@@ -97,7 +98,7 @@ function PageSamples() {
 
     
 {/** Start Blog*/}
-      <div className="w3-container w3-content text-black">
+      <div className="container p-4 text-black">
         <div className="blog-page-2  w3-padding-16" id="blog-page-2">
             <div className="justify-content-center">
               <div className="row d-flex justify-content-center align-items-center">          
@@ -148,7 +149,7 @@ function PageSamples() {
 
 
       {/**Start Restaurant*/}
-<div className="w3-container w3-content text-black">
+<div className="container p-4 text-black">
         <div className="restaurant-page w3-padding-24" id="restaurant-page">
           <div className=" text-black justify-content-center">
             <div className="justify-content-center">
@@ -195,7 +196,7 @@ function PageSamples() {
 {/**End Blog Yoga */}
       
 {/**Start Album */}
-<div className="w3-container w3-content  text-black">
+<div className="container p-4  text-black">
         <div className="album-page  w3-padding-16" id="album-page">
             <div className="justify-content-center">
               <div className="row d-flex justify-content-center align-items-center">
@@ -241,7 +242,7 @@ function PageSamples() {
         </div>
         </div>
    
-        <div className="w3-container w3-content text-black">
+        <div className="container p-4 text-black">
           <div className=" text-black justify-content-center w3-padding-24">
               <div className="row d-flex  justify-content-center align-items-center">
              
@@ -314,19 +315,29 @@ function PageSamples() {
                   <b> NOTE:</b> "I am in the process of adding more utility functions. Please be forgiving of the layout, as it is temporary. Thanks in advance for your patience!"
                 </i>
               </p>
-              <button
-                className="w3-button w3-text-light-grey  w3-margin-right rounded mt-2 w3-margin-bottom"
-                style={{ backgroundColor: "#FF385C" }}
-              >
-                <Link
-                  to="/server"
-                  className="button text-white"
-                  onClick={scrollToTop}
-                >
-                 View Utility Apps
-                </Link>
-              </button>
-        
+  
+            <Link
+            to="/server"
+            onClick={scrollToTop}
+            className="btn btn-outline-primary rounded-pill px-4 py-2 shadow"
+            style={{
+              borderColor: "#FF000C",
+              color: "#FF000C",
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#FF000C";
+              e.currentTarget.style.color = "#fff";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.color = "#FF000C";
+            }}
+            aria-label="View Carol Wargo's Portfolio"
+          >
+            <MDBIcon icon="arrow-right" className="me-2" />
+          Utility Apps
+          </Link>
           </div>
         </div>
         </div>
