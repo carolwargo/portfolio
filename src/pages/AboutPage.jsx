@@ -776,7 +776,7 @@ export default function AboutPage() {
             Explore my portfolio, sample sites, and repositories.
           </p>
           <Link
-            to="/portfolio"
+            to="/samples"
             onClick={scrollToTop}
             className="btn btn-outline-primary rounded-pill px-4 py-2 shadow"
             style={{
@@ -795,7 +795,7 @@ export default function AboutPage() {
             aria-label="View Carol Wargo's Portfolio"
           >
             <MDBIcon icon="arrow-right" className="me-2" />
-            View Portfolio
+            View Sample Sites
           </Link>
         </div>
       </MDBContainer>

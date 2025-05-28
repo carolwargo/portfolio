@@ -1,3 +1,4 @@
+//src/components/Footer.jsx
 import { MDBFooter, MDBContainer, MDBCol, MDBRow, MDBIcon } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import ResumeDownload from "../assets/ResumeDownload.pdf";

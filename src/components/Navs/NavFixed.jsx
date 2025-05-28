@@ -1,35 +1,27 @@
-import React, { useState, useEffect } from "react";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../../App.css"; // Import the CSS file where you define custom styles
+// src/components/Navs/NavFixed.jsx
+import  { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Box } from '@mui/material';
+import { motion } from 'framer-motion';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../App.css';
 
-function BasicExample() {
+function NavFixed() {
   const [expanded, setExpanded] = useState(false);
 
   const handleNavbarToggle = () => {
-    setExpanded(!expanded);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  const closeNavbar = () => {
-    setExpanded(false);
+    setExpanded((prev) => !prev);
   };
 
   const handleNavLinkClick = () => {
-    scrollToTop();
-    closeNavbar();
+    setExpanded(false);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   useEffect(() => {
@@ -39,28 +31,58 @@ function BasicExample() {
       }
     };
 
-    window.addEventListener("resize", handleResize);
+    // Debounce resize for performance
+    let timeout;
+    const debouncedResize = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(handleResize, 100);
+    };
 
+    window.addEventListener('resize', debouncedResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', debouncedResize);
+      clearTimeout(timeout);
     };
   }, []);
 
   return (
-
+    <div>
+      <style>
+        {`
+        /* src/App.css */
+.nav-link-custom {
+  font-size: 0.875rem; /* 14px */
+  font-family: 'Raleway', sans-serif;
+  color: #333 !important;
+}
+.nav-link-custom:hover {
+  color: #FF385C !important;
+}
+.navbar-brand {
+  font-family: 'Raleway', sans-serif;
+  color: #FF385C !important;
+}`}
+      </style>
+   
+    <Box sx={{ fontFamily: 'Raleway, sans-serif' }}>
       <Navbar
         expand="lg"
         className="shadow-sm bg-body-tertiary fixed-top"
         expanded={expanded}
+        aria-label="Main navigation"
       >
         <Container fluid>
           <Navbar.Brand
             as={Link}
             to="/"
-            style={{ fontSize: "14px" }}
             onClick={handleNavLinkClick}
+            sx={{
+              color: '#FF385C',
+              fontWeight: 'bold',
+              fontSize: { xs: '1rem', md: '1.1rem' },
+            }}
           >
-            <b>CW</b>HOME
+            CW HOME
           </Navbar.Brand>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
@@ -68,13 +90,13 @@ function BasicExample() {
           >
             <FontAwesomeIcon icon={faBars} color="black" />
           </Navbar.Toggle>
-          <Navbar.Collapse id="navbar-collapse">
+          <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link
                 as={Link}
                 to="/about"
                 onClick={handleNavLinkClick}
-                style={{ fontSize: "14px" }}
+                className="nav-link-custom"
               >
                 About
               </Nav.Link>
@@ -82,78 +104,81 @@ function BasicExample() {
                 as={Link}
                 to="/resume"
                 onClick={handleNavLinkClick}
-                style={{ fontSize: "14px" }}
+                className="nav-link-custom"
               >
                 Resume
               </Nav.Link>
-             
-              <NavDropdown 
-                title="My Work" 
-                id="basic-nav-dropdown" 
-                style={{ fontSize: "14px" }} 
+              <NavDropdown
+                title="My Work"
+                id="my-work-dropdown"
+                className="nav-link-custom"
                 onSelect={handleNavLinkClick}
               >
-                <NavDropdown.Item 
-                  as={Link}
-                  to="/portfolio"
-                  style={{ fontSize: "14px" }}
-                >
+                <NavDropdown.Item as={Link} to="/portfolio">
                   Web Components
                 </NavDropdown.Item>
-                <NavDropdown.Item 
-                  as={Link}
-                  to="/samples"
-                  style={{ fontSize: "14px" }}
-                >
+                <NavDropdown.Item as={Link} to="/samples">
                   Landing Pages
                 </NavDropdown.Item>
-                <NavDropdown.Item 
-                  as={Link}
-                  to="/forms"
-                  style={{ fontSize: "14px" }}
-                >
+                <NavDropdown.Item as={Link} to="/forms">
                   Forms
                 </NavDropdown.Item>
-                <NavDropdown.Item 
-                  as={Link}
-                  to="/cards"
-                  style={{ fontSize: "14px" }}
-                >
+                <NavDropdown.Item as={Link} to="/cards">
                   Cards & Images
                 </NavDropdown.Item>
-                <NavDropdown.Item 
-                  as={Link}
-                  to="/server"
-                  style={{ fontSize: "14px" }}
-                >
+                <NavDropdown.Item as={Link} to="/server">
                   Utility Apps
                 </NavDropdown.Item>
-                <NavDropdown.Item 
-                  as={Link}
-                  to="/graphics"
-                  style={{ fontSize: "14px" }}
-                >
+                <NavDropdown.Item as={Link} to="/graphics">
                   Graphics
                 </NavDropdown.Item>
+     <NavDropdown
+  title="Graphics"
+  id="graphics-sections-dropdown"
+  renderMenuOnMount={true}
+>
+  {[
+      { id: 'graphics', label: 'All Samples' },
+      { id: 'newsletter-samples', label: 'Newsletter Samples' },
+    { id: 'email-samples', label: 'Email Samples' },
+    { id: 'social-samples', label: 'Social Media' },
+    { id: 'sport-samples', label: 'Sports Media' },
+    { id: 'info-samples', label: 'Infographics' },
+  ].map((section) => (
+    <NavDropdown.Item
+      key={section.id}
+      href={`/graphics#${section.id}`}
+      onClick={() => setExpanded(false)}
+    >
+      {section.label}
+    </NavDropdown.Item>
+  ))}
+</NavDropdown>
               </NavDropdown>
             </Nav>
             <Nav>
               <Link
                 to="/contact"
-                className="button text-grey mr-3"
-                style={{ fontSize: "14px" }}
                 onClick={handleNavLinkClick}
+              
               >
-                <button className="btn-outline-white w3-button btn-sm rounded px-3 shadow">
-                  <i className="far fa-user-circle"></i> contact
-                </button>
+                <motion.button
+                  className="btn btn-outline-dark rounded-pill shadow btn-sm px-3 py-2 "
+                  whileHover={{ scale: 1.0, backgroundColor: 'black', color: '#ffffff' }}
+                  whileTap={{ scale: 0.95 }}
+                  style={{ fontFamily: 'Raleway, sans-serif' }}
+                >
+                 
+                  Contact
+                </motion.button>
               </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-  
+    </Box>
+     </div>
   );
 }
 
-export default BasicExample;
+export default NavFixed;

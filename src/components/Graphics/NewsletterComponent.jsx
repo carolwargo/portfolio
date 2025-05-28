@@ -18,16 +18,16 @@ import Furniture3 from '../../../assets/images/Newsletters/FURNITURE/Furniture3.
 //import NewsLetter4 from '../../../assets/images/NewsLetterImages/Newsletter4.png';
 
 
-const Newsletters = () => {
+const NewsletterComponents = () => {
 
       return (
     
-        <div className='email-samples bg-primary-subtle w3-padding-24' id="email-samples">
-        <div className="p-4 text-center ">
+        <div>
+          <div className='bg-warning-subtle p-5'>
+     <div className="px-5 mt-5 mb-5 text-center ">
         <h1 className='fw-bold text-center'>
-          <i className='fw-bold'>EMAIL CAMPAIGN SAMPLES</i></h1> 
-            <div className="container  w3-padding-48">
-     
+          <i className='fw-bold'>NEWSLETTER CAMPAIGN SAMPLES</i></h1> 
+            <div className="container">
               <div className="row d-flex justify-content-center align-items-center">
               <div className="col-sm-12 col-md-4 col-lg-4 justify-content-center align-items-center ">
               <div className="graphics-carousel-body justify-content-center align-items-center">
@@ -122,8 +122,9 @@ const Newsletters = () => {
         {/*End Business*/}
    </div>
         </div>
+        </div>
     );
 
 }
 
-export default Newsletters;
+export default NewsletterComponents;
